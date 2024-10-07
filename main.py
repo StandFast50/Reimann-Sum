@@ -16,15 +16,18 @@ def plot(x, y):
     plt.show()
 
 # Coordinates
-x = [0, 1, 2, 3, 4]
-y = [50, 75, 32, 46, 1500] 
+x = [ 1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10] 
 
-a = 0
-b = 2
+a = 0 #1
+b = 4 # 5
 n = 4
 
 # Calculating Delta X (Width)
-dx = (x[b] - x[a]) / n
+if isinstance(a, int) and isinstance(b, int):
+    dx = (b - a) / n
+elif isinstance(a, array) and isinstance(b, array):
+    dx = (x[b] - x[a]) / n
 
 # Calculating the Subintervals
 x_subintervals = [0] * (n + 1)
