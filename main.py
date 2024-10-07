@@ -27,17 +27,35 @@ n = 4
 dx = (x[b] - x[a]) / n
 
 # Calculating the Subintervals
-subintervals = [0] * (n)
-interval = 0
-for i in range(n):
-    subintervals[i] = [interval, interval + dx]
-    interval+=dx
-print(subintervals)
-# Calculating the Midpoints
-midpoints = [0] * n
-for i in range(n):
-    x1 = subintervals[i][0]
-    x2 = subintervals[i][1]
-    midpoints[i] = calculate_midpoint(x1, x2)
+x_subintervals = [0] * (n + 1)
+x_interval = x[a]
+for i in range(n+1):
+    x_subintervals[i] = x_interval
+    x_interval+=dx
 
-print(midpoints)
+# Calculating the Midpoints
+x_midpoints = [0] * n
+for i in range(n):
+    x1 = x_subintervals[i]
+    x2 = x_subintervals[i+1]
+    x_midpoints[i] = calculate_midpoint(x1, x2)
+
+
+# Y Subintervals
+y_subintervals = [0] * (n)
+for i in range(n):
+    x_value = x_midpoints[i]
+    x1 = x_subintervals[i]
+    x2 = x_subintervals[i+1]
+    y1 = y[i]
+    y2 = y[i + 1]
+    calculation = y1 + ((x_value - x1) / (x2 - x1)) * (y2 - y1)
+    y_subintervals[i] = calculation
+    print(f"x: {x_value}")
+    print(f"x1: {x1}")
+    print(f"x2: {x2}")
+    print(f"y1: {y1}")
+    print(f"y2: {y2}")
+    print(f"calculation { calculation}")
+    print("**************")
+                                
