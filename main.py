@@ -4,10 +4,7 @@ import ReimannSum
 # Functions
 def f(x): 
     return pow(x, 2)
-
-
-
-        
+  
 def plot(x, y):
     plt.plot(x, y)
     plt.title("X vs Y")
