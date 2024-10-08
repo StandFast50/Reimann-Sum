@@ -16,11 +16,11 @@ def plot(x, y):
     plt.show()
 
 # Coordinates
-x = [ 1, 2, 3, 4, 5]
-y = [2, 4, 6, 8, 10] 
+x = [0, 1, 2, 3, 4]
+y = [10, 20, 5, 7, 30] 
 
-a = x[0] #1
-b = x[4] # 5
+a = 0 #1
+b = 4 # 5
 n = 4
 
 ReimannSum.midpoint_calculation(x, y, a, b, n)
